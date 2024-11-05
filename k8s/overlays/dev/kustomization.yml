@@ -1,0 +1,7 @@
+resources:
+  - ../../base
+
+images:
+  - name: gcr.io/${{ secrets.GCP_PROJECT_ID }}/ecom-api-gateway
+    newName: gcr.io/${{ secrets.GCP_PROJECT_ID }}/ecom-api-gateway
+    newTag: latest

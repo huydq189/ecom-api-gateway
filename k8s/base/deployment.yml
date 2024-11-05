@@ -1,0 +1,20 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecom-api-gateway
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ecom-api-gateway
+  template:
+    metadata:
+      labels:
+        app: ecom-api-gateway
+    spec:
+      containers:
+      - name: ecom-api-gateway 
+        image: gcr.io/${{ secrets.GCP_PROJECT_ID }}/ecom-api-gateway:latest
+        ports:
+        - containerPort: 3000
